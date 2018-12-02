@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import Vote from './Vote';
 
-const VotesList = ({ votes }) => (
+const MessagesList = ({ messages }) => (
   <section id="votes-list">
     <ul>
-      {votes.map(message => (
+      {messages.map(message => (
         <Vote key={message.id}
           {...message}
         />
@@ -15,8 +15,8 @@ const VotesList = ({ votes }) => (
   </section>
 );
 
-VotesList.propTypes = {
-  votes: PropTypes.arrayOf(
+MessagesList.propTypes = {
+  messages: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired,
@@ -25,4 +25,4 @@ VotesList.propTypes = {
   ).isRequired
 };
 
-export default VotesList;
+export default MessagesList;

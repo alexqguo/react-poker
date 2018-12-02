@@ -20,6 +20,8 @@ const store = createStore(
 const username = `User ${Date.now()}`;
 const socket = setupSocket(store.dispatch, username);
 
+// window.store = store; // testing
+
 sagaMiddleware.run(handleNewMessage, { socket, username });
 
 ReactDOM.render(

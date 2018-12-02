@@ -21,6 +21,7 @@ wss.on('connection', (ws) => {
       case 'ADD_USER': {
         index = users.length;
         users.push({ name: data.name, id: index + 1 });
+
         ws.send(JSON.stringify({
           type: 'USERS_LIST',
           users
